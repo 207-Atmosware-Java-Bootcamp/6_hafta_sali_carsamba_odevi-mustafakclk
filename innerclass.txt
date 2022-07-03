@@ -1,0 +1,59 @@
+package haftasonualistirma;
+
+import  haftasonualistirma.innerclass.Il.Ilce;
+
+public class innerclass {
+	
+private String ulkeAdi;
+	
+	public String getUlkeAdi() {
+		return ulkeAdi;
+	}
+	
+	public void setUlkeAdi(String ulkeAdi) {
+		this.ulkeAdi = ulkeAdi;
+	}
+	
+	// İç static olan class (İl)
+	public static class Il {
+		private String ilAdi;
+		
+		public String getIlAdi() {
+			return ilAdi;
+		}
+		
+		public void setIlAdi(String ilAdi) {
+			this.ilAdi = ilAdi;
+		}
+		
+		// İç static olan class (İlçe)
+		public static class Ilce {
+			private String ilceAdi;
+			
+			public String getIlceAdi() {
+				return ilceAdi;
+			}
+			
+			public void setIlceAdi(String ilceAdi) {
+				this.ilceAdi = ilceAdi;
+			}
+			
+		}
+		
+	}
+	
+	// main test
+	public static void main(String[] args) {
+		innerclass ulke = new innerclass();
+		ulke.setUlkeAdi("TUrkiye");
+		
+		Il il = new Il();
+		il.setIlAdi("ANTALYA");
+		
+		Ilce ilce = new Ilce();
+		ilce.setIlceAdi("ALANYA");
+		
+		System.out.println(
+				"Ulke Adi: " + ulke.getUlkeAdi() + " Il adi: " + il.getIlAdi() + " Ilce Adi: " + ilce.getIlceAdi());
+	}
+}
